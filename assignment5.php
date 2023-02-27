@@ -20,26 +20,35 @@ Create an HTML form that allows users to input their name and email address. The
         div, button{
             margin: 10px;
         }
+        .container{
+            width: 50%;
+            margin: 50px auto;
+            padding: 25px 20px;
+            background-color: lightsalmon;
+            border-radius: 20px;
+        }
+        form{
+            margin: 10px 25px;
+        }
     </style>
 </head>
 <body>
-    
-    <form action="assignment5.php" method="POST">
-        <div>
-            <label for="">Name:</label>
-            <input type="text" name="name" required>
-        </div>
-        <div>
-            <label for="">Email:</label>
-            <input type="email" name="email" required>
-        </div>
-        <button type="submit">Submit</button>
-    </form>
-    <br>
-    <hr>
-</body>
-</html>
-
+    <div class="container">
+        <h3>Task-1:</h3>
+        <form action="assignment5.php" method="POST">
+            <div>
+                <label for="">Name:</label>
+                <input type="text" name="name" required>
+            </div>
+            <div>
+                <label for="">Email:</label>
+                <input type="email" name="email" required>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+        <br>
+    </div>
+    <div class="container">
 <?php
 
 /*
@@ -88,7 +97,7 @@ $person = new Person();
 $person->setName("mahedi");
 $person->setEmail("mahedi@gmail.com");
 
-echo "Output of Task-2: <br>";
+echo "<h3>Output of Task-2:</h3>";
 echo $person->getName()."<br>";
 echo $person->getEmail()."<br>";
 
@@ -102,8 +111,8 @@ Create a PHP script that retrieves the user's name and email from the HTML form 
 echo "<br>";
 echo "<br>";
 echo "<br>";
-echo "Output of Task-3:";
-echo "<br>";
+echo "<h3>Output of Task-3:</h3>";
+
 $name = "";
 $email = "";
 if(isset($_POST['name']) && isset($_POST['email'])){
@@ -119,3 +128,7 @@ if(isset($_POST['name']) && isset($_POST['email'])){
     echo "Email: ". $newPerson->getEmail();
 }
 
+?>
+    </div>
+</body>
+</html>
