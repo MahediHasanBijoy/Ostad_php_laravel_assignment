@@ -1,5 +1,6 @@
 <?php
 require_once "functions.php";
+session_start();
 
 $name = $email = $password = $picture = "";
 $error = array();
@@ -8,14 +9,39 @@ if($_SERVER['REQUEST_METHOD'] === "POST"){
     $name = $_POST['name'];    
     $email = $_POST['email'];    
     $password = $_POST['password'];    
-    $picture = $_POST['picture'];
+    $picture = $_FILES['picture']['size'];
     
-    // error for empty input
+    // input validation
     foreach($_POST as $key=>$val){
         if($val === ""){
             $error[$key] = "$key field is required!";
+        }else if($key === "email"){
+            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                $error[$key] = "Invalid email format";
+              }
         }
     }
+
+    // file upload 
+    if($picture > 0){
+        $filename = uploadFile();
+        if(!$filename){
+            $error['picture'] = "sorry, only jpg, jpeg, png & gif files are allowed.";
+        }else if(empty($error)){
+            // store user in file
+            storeUser($name, $email, $filename);
+            
+            // set cookie 
+            setcookie('user',$name);
+
+            unset($name, $email, $password);
+            // redirect to show users page
+            header("location:show_users.php");
+        }
+    }else{
+        $error['picture'] = "Please choose a photo";
+    }
+
 }
 
 
@@ -32,17 +58,18 @@ if($_SERVER['REQUEST_METHOD'] === "POST"){
 </head>
 <body class="bg-light">
     <div class="container">
+        <a href="show_users.php" class="btn btn-primary btn-sm mt-3 ms-5">Show Users</a>
         <div class="row">
-            <div class="col-md-6 offset-md-3 mt-5 ">
+            <div class="col-md-6 offset-md-3 mt-3 mb-5">
                 <h2 class="text-center mb-4">Assignment</h2>
-                <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post" class="p-4 shadow rounded">
+                <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post" enctype="multipart/form-data" class="p-4 shadow rounded">
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" class="form-control mt-2 shadow border-0 <?php echo isset($error['name']) ? 'is-invalid':'';?>" name="name" id="name" placeholder="Enter your name" value="<?php echo !empty($name)?$name:""?>">
                         <?php
                         if(!empty($error['name'])):
                         echo "<div class='invalid-feedback'>
-                            Please enter a username.
+                            {$error['name']}
                         </div>";
                         endif;
                         ?>
@@ -53,7 +80,7 @@ if($_SERVER['REQUEST_METHOD'] === "POST"){
                         <?php
                         if(!empty($error['email'])):
                         echo "<div class='invalid-feedback'>
-                            Please enter an email.
+                            {$error['email']}
                         </div>";
                         endif;
                         ?>
@@ -64,7 +91,7 @@ if($_SERVER['REQUEST_METHOD'] === "POST"){
                         <?php
                         if(!empty($error['password'])):
                         echo "<div class='invalid-feedback'>
-                            Please enter a password.
+                            {$error['password']}
                         </div>";
                         endif;
                         ?>
@@ -75,7 +102,7 @@ if($_SERVER['REQUEST_METHOD'] === "POST"){
                         <?php
                         if(!empty($error['picture'])):
                         echo "<div class='invalid-feedback'>
-                            Please choose a profile picture.
+                            {$error['picture']}
                         </div>";
                         endif;
                         ?>
