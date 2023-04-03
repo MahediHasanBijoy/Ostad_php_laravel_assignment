@@ -1,0 +1,15 @@
+I have used bootstrap5 for designing of this blog website.
+
+I have faced some issues to make the design because of the lack of my design knowledge. I have tried my best to solve all the tasks. Here the steps I have followed to design the pages.
+
+I have used bootstrap navbar template and customize it to add a logo and other page links.
+
+Then I have used grid layout to design the latest post section to show the latest posts.
+
+For blogs page I have used the same strategy.
+
+For contact page I have used bootstrap form template and customize it according to the requirements.
+
+For showing the confirmation when submitting the contact form I have check if all the fields are submitted then send a get request to the contact page that the form submitted successfully. And then I have showed the message for this request.
+
+I have used some javascript to remove the message 5 seconds after it showed up.
