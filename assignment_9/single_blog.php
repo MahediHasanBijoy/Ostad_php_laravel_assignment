@@ -8,6 +8,7 @@
     <title>blog</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         a{
             text-decoration: none;  
@@ -52,7 +53,15 @@
             <p>Date: 12/12/2023 12:30:33 am</p>
             <img src="post1.jpg" class="img-fluid my-3" alt="">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos minus temporibus modi illum blanditiis omnis iure deleniti, vitae similique fugiat, veniam repellendus quia tempora corrupti quas dicta tempore voluptatem provident. <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi ratione saepe cumque maxime possimus consectetur voluptate doloremque dolor illum vero? <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur sunt, culpa cum molestias ullam cupiditate? <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem eveniet consequuntur neque eligendi rerum mollitia quisquam reprehenderit, voluptatum minus dolores eum, aliquid necessitatibus odit aspernatur cupiditate impedit eaque, dolorum itaque!<br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi ratione saepe cumque maxime possimus consectetur voluptate doloremque dolor illum vero? <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur sunt, culpa cum molestias ullam cupiditate? <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem eveniet consequuntur neque eligendi rerum mollitia quisquam reprehenderit, voluptatum minus dolores eum, aliquid necessitatibus odit aspernatur cupiditate impedit eaque, dolorum itaque! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt autem quisquam quibusdam saepe laboriosam iusto? Deleniti, accusamus at quae sed porro facere nihil, eaque voluptas odio dolorem harum voluptatem incidunt perspiciatis libero mollitia repellat laboriosam nulla. Recusandae asperiores quam architecto. <br> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi tenetur commodi repellendus deserunt nulla culpa libero dolor ea facere, enim, sunt aperiam dignissimos odio molestiae fugiat, explicabo ut ab reiciendis exercitationem perferendis. Dolorem et, quaerat aut similique rerum ad totam dicta unde doloribus cumque? Reprehenderit, pariatur ea doloremque, perferendis quo voluptatum id deserunt inventore quia qui itaque porro dicta ipsam facilis eius illum. Ullam dolorem, sed doloribus dignissimos nisi alias.</p>
-            
+            <div class="d-flex justify-content-end align-item-center bg-light p-4 rounded">
+                <h3>Share on</h3>
+                <div class="d-flex justify-content-end">
+                    <a href="https://facebook.com" class="h2 ms-3"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://instagram.com" class="h2 ms-3"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://linkedin.com" class="h2 ms-3"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://twitter.com" class="h2 ms-3 "><i class="fa-brands fa-twitter"></i></a>
+                </div>
+            </div>
         </div>
     </section>
 
