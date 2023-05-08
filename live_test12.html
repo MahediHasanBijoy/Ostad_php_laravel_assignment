@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <ul id="myList">
+        <li>Orange</li>
+        <li>Banana</li>
+    </ul>
+    <button id="addBtn">Add</button>
+
+
+    <script>
+        let list = document.querySelector("#myList");
+        let addBtn = document.querySelector("#addBtn");
+
+        addBtn.addEventListener("click", addItem);
+        
+        // add list item
+        function addItem(){
+            let item = document.createElement('li');
+            item.innerText = "Apples";
+
+            list.appendChild(item);
+        }
+
+
+    </script>
+</body>
+</html>
